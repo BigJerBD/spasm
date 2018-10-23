@@ -1,6 +1,5 @@
 package ircbot
 
-import listeners.HelloWorldReplier
 import org.pircbotx.hooks.ListenerAdapter
 import org.pircbotx.hooks.types.GenericMessageEvent
 import org.pircbotx.{Configuration, PircBotX}
@@ -12,10 +11,6 @@ class TestPircBotX(listener:ListenerAdapter) extends PircBotX(
     .addAutoJoinChannel("#pircbotx")
     .addListener(listener)
     .buildConfiguration()) {
-
-  def this(){
-    this(new HelloWorldReplier)
-  }
 }
 
 

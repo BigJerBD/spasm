@@ -7,9 +7,18 @@ import scala.util.{Failure, Success, Try}
 
 object Context {
 
-  def using[I <: {def close()}, O]
-  (ressource: I)
-  (block: I => O): O = {
+  /**
+    * using a closable element and close
+    * it automatically while leaving context
+    *
+    * @param ressource openable ressource
+    * @param block  code block to execute with ressource
+    * @tparam I closable type
+    * @tparam O return type of block
+    * @return block return type
+    */
+  def using[I <: AutoCloseable, O]
+    (ressource: I) (block: I => O) : O  = {
     Try(block(ressource)) match {
 
       case Success(result) =>

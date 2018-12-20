@@ -12,6 +12,7 @@ import components.MsgInfo
 
 
 class NdJsonWriteListener(path: String, flushtime: Long = 5000)
+
   extends ListenerAdapter with AutoCloseable {
 
   private var lastInputTime = Calendar.getInstance.getTime

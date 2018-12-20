@@ -15,6 +15,8 @@ object SpasmRun {
 
 
   def main(args: Array[String]): Unit = {
+
+
     val rsrc = new RessourceManager(
       "jsonListener" -> new NdJsonWriteListener("stub_path.json"),
     )

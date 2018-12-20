@@ -11,6 +11,8 @@ class TestPircBotX(listener:ListenerAdapter) extends PircBotX(
     .addAutoJoinChannel("#pircbotx")
     .addListener(listener)
     .buildConfiguration()) {
+
+
 }
 
 

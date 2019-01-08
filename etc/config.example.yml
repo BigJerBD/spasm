@@ -1,17 +1,15 @@
-listeners:
+listeners :
   -
 
 bots:
   - classname : TwitchBot
-    name :
-    server:
-    channel:
+    username : BigJerBD
+    server: irc.twitch.tv
+    channel: themunchdown
     listeners:
+      - JsonListener
 
-
-closerule:
-  -
-
+closer :
 
 
 

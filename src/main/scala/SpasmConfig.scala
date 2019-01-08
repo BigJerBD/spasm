@@ -6,10 +6,9 @@ import java.io.{File, FileInputStream}
 
 
 class SpasmConfig {
-  @BeanProperty var listeners = new ListenerConfig
-  @BeanProperty var bots = new BotConfig
-  @BeanProperty var closerule = new CloseRuleConfig
-
+  @BeanProperty var listeners = Array.empty[ListenerConfig]
+  @BeanProperty var bots = Array.empty[BotConfig]
+  @BeanProperty var closers = Array.empty[CloseRuleConfig]
 }
 
 
@@ -18,19 +17,17 @@ class BotConfig {
   @BeanProperty var username = ""
   @BeanProperty var server = ""
   @BeanProperty var channel = ""
-  @BeanProperty var listeners = new java.util.ArrayList[String]
+  @BeanProperty var listeners = Array.empty[String]
 }
 
 
 class ListenerConfig {
   @BeanProperty var classname = ""
-  @BeanProperty var args = new java.util.ArrayList[String]
-
-
+  @BeanProperty var args = Array.empty[String]
 }
 
 class CloseRuleConfig {
   @BeanProperty var classname = ""
-  @BeanProperty var args = new java.util.ArrayList[String]
+  @BeanProperty var args = Array.empty[String]
 }
 

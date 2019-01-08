@@ -22,7 +22,7 @@ object SpasmRun {
 
     val rMan = new RessourceManager(
       "jsonListener" -> new NdJsonWriteListener("stub_path.json"),
-    )az
+    )
 
     Context.using(rMan) {
       rMan =>

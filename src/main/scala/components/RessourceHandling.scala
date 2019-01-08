@@ -11,7 +11,7 @@ class CloseableMap [T <: AutoCloseable] (data: (String, T)*)
 
   var ressources: Map[String, T] = data.toMap
 
-
+  //methods
   def close(): Unit = for ((_, ressource) <- ressources) ressource.close()
   def apply(key: String): T = ressources(key)
 
@@ -24,9 +24,10 @@ class CloseableMap [T <: AutoCloseable] (data: (String, T)*)
 class RessourceManager[T](ressources: (String, T)*)
   extends AutoCloseable {
 
+  //we try to only close the closable ressources
   private val closeableTuple = ressources collect { case (s, v: AutoCloseable) => (s, v) }
   val closeableRessources = new CloseableMap(closeableTuple: _*)
-  val allRessources = Map(ressources: _*)
+  val allRessources: Map[String, T] = Map(ressources: _*)
 
   //methods
   def apply(key: String): T = allRessources(key)

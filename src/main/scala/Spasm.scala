@@ -7,7 +7,7 @@ import org.pircbotx.hooks.ListenerAdapter
 import scala.collection.immutable.HashMap
 
 
-object SpasmRun {
+object Spasm {
 
   def waitForInterrupt(): Unit = {
     wait(5000)
@@ -22,7 +22,7 @@ object SpasmRun {
 
     val rMan = new RessourceManager(
       "jsonListener" -> new NdJsonWriteListener("stub_path.json"),
-    )az
+    )
 
     Context.using(rMan) {
       rMan =>
@@ -32,8 +32,8 @@ object SpasmRun {
         manager.addBot(bot)
 
         bot.startBot()
-        //manager.start()
-        //manager.stop()
+      //manager.start()
+      //manager.stop()
 
     }
   }

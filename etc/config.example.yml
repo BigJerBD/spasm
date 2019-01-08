@@ -1,0 +1,21 @@
+listeners:
+  -
+
+bots:
+  - classname : TwitchBot
+    name :
+    server:
+    channel:
+    listeners:
+
+
+closerule:
+  -
+
+
+
+
+
+
+
+

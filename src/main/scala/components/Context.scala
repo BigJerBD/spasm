@@ -12,14 +12,13 @@ object Context {
     * it automatically while leaving context
     *
     * @param ressource openable ressource
-    * @param block  code block to execute with ressource
+    * @param proc  code block to execute with ressource
     * @tparam I closable type
     * @tparam O return type of block
     * @return block return type
     */
-  def using[I <: AutoCloseable, O]
-    (ressource: I) (block: I => O) : O  = {
-    Try(block(ressource)) match {
+  def using [I <: AutoCloseable, O] (ressource: I) (proc: I => O) : O  = {
+    Try(proc(ressource)) match {
 
       case Success(result) =>
         ressource.close()

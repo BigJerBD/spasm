@@ -1,8 +1,8 @@
-package components
-
+package ressourceUtil
 
 /**
   * A ressource Mapping that can close all his element
+  *
   * @note with a smart override of MapClass only close would be needed to implemented
   * @param data variable amount of closableData with a name
   */
@@ -24,7 +24,7 @@ class CloseableMap [T <: AutoCloseable] (data: (String, T)*)
 class RessourceManager[T](ressources: (String, T)*)
   extends AutoCloseable {
 
-  //we try to only close the closable ressources
+  //we close the closable ressources
   private val closeableTuple = ressources collect { case (s, v: AutoCloseable) => (s, v) }
   val closeableRessources = new CloseableMap(closeableTuple: _*)
   val allRessources: Map[String, T] = Map(ressources: _*)

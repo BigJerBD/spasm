@@ -1,0 +1,31 @@
+listeners :
+  - name : listener_1
+    classname : NdJsonWriteListener
+    args :
+      - stub_path.json
+
+
+bots:
+  - botname : Bot1
+    bottype : TwitchBot
+    username : <BigJerBD>
+    server: irc.twitch.tv
+    channel: <insert_channel>
+    password: <insert_key>
+    listeners:
+      - listener_1
+
+
+
+runner :
+  classname: TimedRunner
+  args :
+    - 500000
+
+
+
+
+
+
+
+

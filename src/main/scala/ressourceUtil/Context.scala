@@ -1,8 +1,5 @@
-package components
+package ressourceUtil
 
-
-import scala.collection.immutable.HashMap
-import scala.language.reflectiveCalls
 import scala.util.{Failure, Success, Try}
 
 object Context {

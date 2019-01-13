@@ -1,0 +1,34 @@
+listeners :
+  - name : listener_1
+    classname : NdJsonWriteListener
+    args :
+      - example_log.json
+
+  - name : listener_2
+    classname : LogWriteListener
+    args :
+      - example_log.txt
+
+
+bots:
+  - botname : Bot1
+    bottype : BaseBot
+    username : helloWorldBot
+    server: irc.freenode.net
+    channel: "#pircbotx"
+    listeners:
+      - listener_1
+      - listener_2
+
+
+
+runner :
+  classname: KeyboardStopRunner
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-Agurim Extractor
+Spasm
 ===============
 this code contains a simple scala tool to record data from IRC (twitch chat, slack, etc.) 
 and record it into log files

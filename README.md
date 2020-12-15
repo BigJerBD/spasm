@@ -1,5 +1,7 @@
-Spasm
+Twitch Scala IRC BOT
 ===============
+this is a toy project used to learn a little bit of metaprogramming in scala
+
 this code contains a simple scala tool to record data from IRC (twitch chat, slack, etc.) 
 and record it into log files
 
